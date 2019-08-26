@@ -216,16 +216,17 @@
       console.log(someObject);
         $.ajax({
           url: 'https://docs.google.com/forms/u/3/d/e/1FAIpQLSf0I3OFwrSIIYYLjTTsRgFp8ENnEFJKmY5rFxqI7en_tpzbxg/formResponse',
-          type:'POST',
+          type:'GET',
           data: someObject,
           dataType:"xml",
         }).done(response => {
           if(response){
-            $('.form-content').addClass('form-content-hide');
-           $('.success').addClass('success-show');
-           $('.first-name').text("Thank you," + " " + firstName + "!");
+            
           }
         })
+        $('.form-content').addClass('form-content-hide');
+        $('.success').addClass('success-show');
+        $('.first-name').text("Thank you," + " " + firstName + "!");
     });
 
     // Feather icons
